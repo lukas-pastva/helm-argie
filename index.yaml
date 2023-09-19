@@ -11,9 +11,9 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-09-19T07:43:22.128686+02:00"
+    created: "2023-09-19T07:48:20.936442+02:00"
     description: helm-argie is creating ArgoCD applications
-    digest: adf4aac78c5e7dd443891dbcf7e039a8ae04a89418d4595fef43b2ccf1c0aa9a
+    digest: 56c667b660fb18ff31f63400c743f96996616d06f24217f06db4f6101235ca1f
     home: https://github.com/lukas-pastva/helm-argie
     keywords:
     - argocd
@@ -28,4 +28,4 @@ entries:
     urls:
     - https://lukas-pastva.github.io/helm-argie/helm-argie-0.1.1.tgz
     version: 0.1.1
-generated: "2023-09-19T07:43:22.128322+02:00"
+generated: "2023-09-19T07:48:20.936069+02:00"
