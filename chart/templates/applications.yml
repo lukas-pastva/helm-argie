@@ -20,7 +20,7 @@ spec:
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: {{ $application.namespace }}
+    namespace: {{ $application_name }}
   syncPolicy:
     automated:
       prune: true

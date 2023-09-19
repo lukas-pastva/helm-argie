@@ -5,5 +5,4 @@ applications: {}
 #    helmUrl: "https://lukas-pastva.github.io/helm-monitorie/"
 #    helmVersion: "0.1.32"
 #    helmChartName: "helm-monitorie"
-#    namespace: ""
 #    helmValues: | ...
