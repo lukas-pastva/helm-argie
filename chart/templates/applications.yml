@@ -1,0 +1,30 @@
+{{- range $application_name, $application := .Values.applications }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $application_name }}
+  namespace: sys-argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  project: default
+  source:
+    repoURL: {{ $application.helmUrl }}
+    targetRevision: {{ $application.helmVersion }}
+    chart: {{ $application.helmChartName }}
+    {{- if $application.helmValues }}
+    helm:
+      values: |
+      {{- $application.helmValues | nindent 8 }}
+    {{- end }}
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: {{ $application.namespace }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  {{- end }}

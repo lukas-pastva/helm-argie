@@ -1,0 +1,23 @@
+annotations:
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/lukas-pastva/helm-argie
+    - name: Upstream Project
+      url: https://github.com/lukas-pastva/helm-argie
+  artifacthub.io/operator: "true"
+apiVersion: v2
+appVersion: v1.1
+description: helm-argie is creating ArgoCD applications
+home: https://github.com/lukas-pastva/helm-argie
+keywords:
+  - argocd
+kubeVersion: '>=1.16.0-0'
+maintainers:
+  - email: info@lukaspastva.sk
+    name: lukas-pastva
+name: helm-argie
+sources:
+  - https://github.com/lukas-pastva/helm-argie
+type: application
+version: 0.1.1
