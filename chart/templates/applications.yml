@@ -16,8 +16,8 @@ spec:
     {{- if $application.helmValues }}
     helm:
       values: |
-      {{- $application.helmValues | toYaml | nindent 8 }}
       {{- $.Values.helmGlobalValues | toYaml  | nindent 8  }}
+      {{- $application.helmValues | toYaml | nindent 8 }}
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
