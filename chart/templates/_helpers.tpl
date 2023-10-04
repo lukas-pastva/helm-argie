@@ -19,3 +19,19 @@ Check if a list contains a value
   {{- end -}}
   {{- $found -}}
 {{- end -}}
+
+{{- define "quoteStrings" -}}
+{{- if kindIs "string" . -}}
+{{ printf "%q" . }}
+{{- else if kindIs "map" . -}}
+{{- range $key, $value := . -}}
+{{ $key | quote }}: {{ include "quoteStrings" $value }}
+{{- end -}}
+{{- else if kindIs "slice" . -}}
+{{- range $value := . -}}
+- {{ include "quoteStrings" $value }}
+{{- end -}}
+{{- else -}}
+{{ . | quote }}
+{{- end -}}
+{{- end -}}
