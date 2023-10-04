@@ -23,6 +23,8 @@ Check if a list contains a value
 {{- define "quoteValues" -}}
 {{- if kindIs "string" . -}}
 {{ printf "%q" . }}
+{{- else if kindIs "bool" . -}}
+{{ . }}
 {{- else if kindIs "map" . -}}
 {{- $first := true -}}
 {{- range $key, $value := . -}}
