@@ -17,7 +17,8 @@ spec:
     helm:
       values: |
       {{- $mergedTree := merge (deepCopy $.Values.helmGlobalValues) $application.helmValues }}
-      {{- include "quoteStrings" $mergedTree | nindent 8 }}
+      {{- include "quoteValues" $mergedTree | nindent 8 }}
+
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"

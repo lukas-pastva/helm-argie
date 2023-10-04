@@ -20,18 +20,18 @@ Check if a list contains a value
   {{- $found -}}
 {{- end -}}
 
-{{- define "quoteStrings" -}}
+{{- define "quoteValues" -}}
 {{- if kindIs "string" . -}}
 {{ printf "%q" . }}
 {{- else if kindIs "map" . -}}
 {{- $first := true -}}
 {{- range $key, $value := . -}}
 {{- if not $first }}{{ printf "\n" }}{{- end -}}
-{{ $key | quote }}:
+{{ $key }}:
 {{- if kindIs "map" $value -}}
-{{ include "quoteStrings" $value | nindent 2 }}
+{{ include "quoteValues" $value | nindent 2 }}
 {{- else -}}
-{{ include "quoteStrings" $value }}
+{{ include "quoteValues" $value }}
 {{- end -}}
 {{- $first = false -}}
 {{- end -}}
@@ -39,9 +39,9 @@ Check if a list contains a value
 {{- range $value := . -}}
 -
 {{- if kindIs "map" $value -}}
-{{ include "quoteStrings" $value | nindent 2 }}
+{{ include "quoteValues" $value | nindent 2 }}
 {{- else -}}
-{{ include "quoteStrings" $value }}
+{{ include "quoteValues" $value }}
 {{- end -}}
 {{- end -}}
 {{- else -}}
