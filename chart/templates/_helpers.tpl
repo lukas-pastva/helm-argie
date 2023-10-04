@@ -27,7 +27,7 @@ Check if a list contains a value
 {{- $first := true -}}
 {{- range $key, $value := . -}}
 {{- if not $first }}{{ printf "\n" }}{{- end -}}
-{{ $key }}:
+{{ $key }}:{{ if not (kindIs "map" $value) }} {{ end }}
 {{- if kindIs "map" $value -}}
 {{ include "quoteValues" $value | nindent 2 }}
 {{- else -}}
