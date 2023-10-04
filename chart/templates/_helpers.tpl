@@ -24,12 +24,25 @@ Check if a list contains a value
 {{- if kindIs "string" . -}}
 {{ printf "%q" . }}
 {{- else if kindIs "map" . -}}
+{{- $first := true -}}
 {{- range $key, $value := . -}}
-{{ $key | quote }}: {{ include "quoteStrings" $value }}
+{{- if not $first }}{{ printf "\n" }}{{- end -}}
+{{ $key | quote }}:
+{{- if kindIs "map" $value -}}
+{{ include "quoteStrings" $value | nindent 2 }}
+{{- else -}}
+{{ include "quoteStrings" $value }}
+{{- end -}}
+{{- $first = false -}}
 {{- end -}}
 {{- else if kindIs "slice" . -}}
 {{- range $value := . -}}
-- {{ include "quoteStrings" $value }}
+-
+{{- if kindIs "map" $value -}}
+{{ include "quoteStrings" $value | nindent 2 }}
+{{- else -}}
+{{ include "quoteStrings" $value }}
+{{- end -}}
 {{- end -}}
 {{- else -}}
 {{ . | quote }}
