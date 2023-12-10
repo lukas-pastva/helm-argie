@@ -20,4 +20,4 @@ name: helm-argie
 sources:
   - https://github.com/lukas-pastva/helm-argie
 type: application
-version: 0.1.13
+version: 0.1.14
