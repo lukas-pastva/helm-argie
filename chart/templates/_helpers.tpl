@@ -39,11 +39,11 @@ Check if a list contains a value
 {{- end -}}
 {{- else if kindIs "slice" . -}}
 {{- range $value := . -}}
-- {{- if kindIs "map" $value -}}
-{{ include "quoteValues" $value | nindent 2 }}
-  {{- else -}}
-{{ include "quoteValues" $value | nindent 2 }}
-  {{- end -}}
+  - {{- if kindIs "map" $value -}}
+{{ include "quoteValues" $value | nindent 4 }}
+    {{- else -}}
+{{ include "quoteValues" $value | nindent 4 }}
+    {{- end -}}
 {{- end -}}
 {{- else -}}
 {{ . | quote }}
