@@ -16,7 +16,7 @@ spec:
     {{- if $application.helmValues }}
     helm:
       values: |  
-      {{- $mergedTree := merge (deepCopy $.Values.helmGlobalValues) $application.helmValues }}
+      {{- $mergedTree := merge $application.helmValues $.Values.helmGlobalValues -}}
       {{- include "quoteValues" $mergedTree | nindent 8 }}
     {{- end }}
   destination:
@@ -30,4 +30,4 @@ spec:
     syncOptions:
       - CreateNamespace=true
   {{- end }}
-  {{- end }}
+{{- end }}
