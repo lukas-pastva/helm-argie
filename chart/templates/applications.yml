@@ -15,9 +15,8 @@ spec:
     chart: {{ $application.helmChartName }}
     {{- if $application.helmValues }}
     helm:
-      values: |  
-      {{- $mergedTree := merge (deepCopy $.Values.helmGlobalValues) $application.helmValues }}
-      {{- include "quoteValues" $mergedTree | nindent 8 }}
+      values: |-
+      {{- $application.helmValues | nindent 8}}
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
