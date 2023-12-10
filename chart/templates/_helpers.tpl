@@ -28,28 +28,22 @@ Check if a list contains a value
 {{- else if kindIs "map" . -}}
 {{- $first := true -}}
 {{- range $key, $value := . -}}
-  {{- if not $first }}{{ printf "\n" }}{{- end -}}
-  {{ $key }}:{{ if not (kindIs "map" $value) }} {{ end }}
-  {{- if kindIs "map" $value -}}
-    {{ include "quoteValues" $value | nindent 2 }}
-  {{- else -}}
-    {{ include "quoteValues" $value }}
-  {{- end -}}
-  {{- $first = false -}}
-{{- end -}}
-{{- else if kindIs "slice" . -}}
-  {{- range $index, $value := . -}}
-    {{- if $index }}, {{ end -}}{{ include "quoteValues" $value }}
-  {{- end -}}
-{{- end -}}
-{{- end -}}
-
--
+{{- if not $first }}{{ printf "\n" }}{{- end -}}
+{{ $key }}:{{ if not (kindIs "map" $value) }} {{ end }}
 {{- if kindIs "map" $value -}}
 {{ include "quoteValues" $value | nindent 2 }}
 {{- else -}}
 {{ include "quoteValues" $value }}
 {{- end -}}
+{{- $first = false -}}
+{{- end -}}
+{{- else if kindIs "slice" . -}}
+{{- range $value := . -}}
+- {{- if kindIs "map" $value -}}
+{{ include "quoteValues" $value | nindent 2 }}
+  {{- else -}}
+{{ include "quoteValues" $value | nindent 2 }}
+  {{- end -}}
 {{- end -}}
 {{- else -}}
 {{ . | quote }}
