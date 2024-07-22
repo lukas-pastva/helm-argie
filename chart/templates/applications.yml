@@ -8,8 +8,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ $application.helmUrl }}
-    targetRevision: {{ $application.helmVersion }}
+    repoURL: {{ $application.repoURL }}
+    targetRevision: {{ $application.targetRevision }}
     {{- if $application.path }}
     {{- if $application.directoryRecurse }}
     directory:
@@ -17,11 +17,11 @@ spec:
     {{ end }}
     path: {{ $application.path }}
     {{ end }}
-    chart: {{ $application.helmChartName }}
-    {{- if $application.helmValues }}
+    chart: {{ $application.chart }}
+    {{- if $application.helm }}
     helm:
       values: |-
-      {{- $application.helmValues | nindent 8 }}
+      {{- $application.helm | nindent 8 }}
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
