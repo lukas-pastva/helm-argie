@@ -11,13 +11,15 @@ spec:
     repoURL: {{ $application.repoURL }}
     targetRevision: {{ $application.targetRevision }}
     {{- if $application.path }}
-    {{- if $application.directoryRecurse }}
+      {{- if $application.directoryRecurse }}
     directory:
       recurse: true
-    {{ end }}
+      {{ end }}
     path: {{ $application.path }}
     {{ end }}
+    {{- if $application.chart }}
     chart: {{ $application.chart }}
+    {{ end }}
     {{- if $application.values }}
     helm:
       values: |-
