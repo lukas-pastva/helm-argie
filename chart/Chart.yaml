@@ -7,12 +7,10 @@ annotations:
       url: https://github.com/lukas-pastva/helm-argie
   artifacthub.io/operator: "true"
 apiVersion: v2
-appVersion: v1.1
 description: helm-argie is creating ArgoCD applications
 home: https://github.com/lukas-pastva/helm-argie
 keywords:
   - argocd
-kubeVersion: '>=1.16.0-0'
 maintainers:
   - email: info@lukaspastva.sk
     name: lukas-pastva
@@ -20,4 +18,4 @@ name: helm-argie
 sources:
   - https://github.com/lukas-pastva/helm-argie
 type: application
-version: 0.1.18
+version: 0.1.19

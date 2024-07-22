@@ -10,11 +10,18 @@ spec:
   source:
     repoURL: {{ $application.helmUrl }}
     targetRevision: {{ $application.helmVersion }}
+    {{- if $application.path }}
+    {{- if $application.directoryRecurse }}
+    directory:
+      recurse: true
+    {{ end }}
+    path: {{ $application.path }}
+    {{ end }}
     chart: {{ $application.helmChartName }}
     {{- if $application.helmValues }}
     helm:
       values: |-
-      {{- $application.helmValues | toYaml | nindent 8 }}
+      {{- $application.helmValues | nindent 8 }}
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
@@ -24,7 +31,10 @@ spec:
     automated:
       prune: true
       selfHeal: true
+   {{ end }}
     syncOptions:
       - CreateNamespace=true
+   {{- if $application.replace }}
+      - Replace=true
   {{- end }}
 {{- end }}

@@ -10,8 +10,33 @@ entries:
           url: https://github.com/lukas-pastva/helm-argie
       artifacthub.io/operator: "true"
     apiVersion: v2
+    created: "2024-07-22T15:18:06.114790212+02:00"
+    description: helm-argie is creating ArgoCD applications
+    digest: 2888a7da47dfa56102144e69c84548b130180a5edab48747d3a8669b40076915
+    home: https://github.com/lukas-pastva/helm-argie
+    keywords:
+    - argocd
+    maintainers:
+    - email: info@lukaspastva.sk
+      name: lukas-pastva
+    name: helm-argie
+    sources:
+    - https://github.com/lukas-pastva/helm-argie
+    type: application
+    urls:
+    - https://lukas-pastva.github.io/helm-argie/helm-argie-0.1.19.tgz
+    version: 0.1.19
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Chart Source
+          url: https://github.com/lukas-pastva/helm-argie
+        - name: Upstream Project
+          url: https://github.com/lukas-pastva/helm-argie
+      artifacthub.io/operator: "true"
+    apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-11T00:30:59.781871+01:00"
+    created: "2024-07-22T15:18:06.108412814+02:00"
     description: helm-argie is creating ArgoCD applications
     digest: a06615c6fb798411a4feda2ea5b2baf6d960a7fff0c3245c3264ff8e1c97eae5
     home: https://github.com/lukas-pastva/helm-argie
@@ -38,7 +63,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-11T00:30:59.781676+01:00"
+    created: "2024-07-22T15:18:06.100330158+02:00"
     description: helm-argie is creating ArgoCD applications
     digest: e5dbe5737c47439fbd0213015df1b520e61ee1e07d4922a3370de1275d611501
     home: https://github.com/lukas-pastva/helm-argie
@@ -65,7 +90,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-11T00:30:59.781385+01:00"
+    created: "2024-07-22T15:18:06.093238872+02:00"
     description: helm-argie is creating ArgoCD applications
     digest: e1212e8538e341a106f43bb3bb5737a4c6a143bc8f77a811d1d0439e41236491
     home: https://github.com/lukas-pastva/helm-argie
@@ -92,7 +117,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-11T00:30:59.780957+01:00"
+    created: "2024-07-22T15:18:06.087566727+02:00"
     description: helm-argie is creating ArgoCD applications
     digest: ca479a35110e2146c0d95820c127da857f3c1b2eafc6d876bca1605ef8ff6037
     home: https://github.com/lukas-pastva/helm-argie
@@ -119,7 +144,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: v1.1
-    created: "2023-12-11T00:30:59.780572+01:00"
+    created: "2024-07-22T15:18:06.080592447+02:00"
     description: helm-argie is creating ArgoCD applications
     digest: 62dab8793a75eb97659561e6562fd5e1f2f9bce1cc6409a1163ec8b0cbb0a79f
     home: https://github.com/lukas-pastva/helm-argie
@@ -136,4 +161,4 @@ entries:
     urls:
     - https://lukas-pastva.github.io/helm-argie/helm-argie-0.1.14.tgz
     version: 0.1.14
-generated: "2023-12-11T00:30:59.779668+01:00"
+generated: "2024-07-22T15:18:06.074309919+02:00"
