@@ -26,8 +26,8 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: {{ $application_name }}
-  {{- if $application.syncEnabled }}
   syncPolicy:
+  {{- if $application.syncEnabled }}
     automated:
       prune: true
       selfHeal: true
