@@ -18,10 +18,10 @@ spec:
     path: {{ $application.path }}
     {{ end }}
     chart: {{ $application.chart }}
-    {{- if $application.helm }}
+    {{- if $application.values }}
     helm:
       values: |-
-      {{- $application.helm | nindent 8 }}
+      {{- $application.values | nindent 8 }}
     {{- end }}
   destination:
     server: "https://kubernetes.default.svc"
